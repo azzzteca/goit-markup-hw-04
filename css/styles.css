@@ -26,6 +26,8 @@ body {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .address {
@@ -63,7 +65,6 @@ img {
 
 /* Лого */
 .logo {
-
   display: block;
   font-family: 'Raleway', sans-serif;
   font-size: 26px;
@@ -132,7 +133,7 @@ img {
 }
 
 /* Контакты в шапке */
-.contacts {
+.contacts.list {
   display: flex;
   margin-left: auto;
 }
@@ -141,9 +142,11 @@ img {
   margin-left: 50px;
 }
 
-.contacts .contact {
-  display: block;
-
+.contact-link {
+  display: flex;
+  height: 16px;
+  justify-content: center;
+  align-items: center;
 
   color: var(--contacts-text, grey);
   font-size: 14px;
@@ -152,18 +155,60 @@ img {
   text-decoration: none;
 }
 
-.contacts .contact:hover,
-.contacts .contact:focus {
+.contact-link:hover, .contact-link:focus {
   color: var(--firm-color, blue);
+  fill: var(--firm-color);
 }
 
+.contact-link > .item {
+  margin-right: 10px;
+  fill: var(--main-text);
+}
+
+.contact-link:hover .item, 
+.contact-link:focus .item {
+  fill: var(--firm-color);
+}
+
+
+/* Практика использования псевдо элементов
+.contact-link.mail::before {
+  display: inline-block;
+  content: "";
+  width: 16px;
+  height: 12px;
+  background-image: url(../images/envelope.svg);
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  background-position: center;
+}
+
+.contact-link.tel::before {
+  display: inline-block;
+  content: "";
+  width: 10px;
+  height: 16px;
+  background-image: url(../images/smartphone.svg);
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  background-size: contain;
+  background-position: center; */
+/* } */
+
 /* Герой */
+
 .hero {
   background-color: #2F303A;
   padding-top: 200px;
   padding-bottom: 200px;
 
-
+  max-width: 1600px;
+  height: 600px;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  url(../images/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
 }
 
 .container-hero {
@@ -216,7 +261,7 @@ img {
 
 .advantages.list {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 
   margin-left: -30px;
 }
@@ -227,7 +272,7 @@ img {
 }
 
 .advantages.list .power {
-  flex-basis: calc(100%/4 - 30px);
+  flex-basis: calc( 100% / 4 - 30px);
   margin-left: 30px;
 }
 
@@ -256,11 +301,22 @@ img {
   line-height: 1.7;
 }
 
+.advantage-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+
+  width: 270px;
+  height: 120px;
+  background-color: var(--buttons-background);
+}
+
 /* Наши услуги */
 
 .service.list {
   display: flex;
-  flex-basis: calc(100%/3 - 30px);
+  flex-basis: calc(100% / 3 - 30px);
   margin-left: -30px;
   margin-bottom: 0;
 }
@@ -296,14 +352,16 @@ img {
   display: flex;
   flex-basis: calc(100% / 4 - 30px);
   margin-left: -30px;
-
 }
 
-.team-card {
+.team.list > .team-card {
   margin-left: 30px;
   
-  border-color: ;
   background-color: white;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+
 }
 
 .main-title.team {
@@ -337,6 +395,114 @@ img {
   line-height: 1.2;
 }
 
+/* Линки у команды */
+.social.list {
+  display: flex;
+  flex-basis: calc(100% / 4 - 10px);
+  margin-left: -10px;
+
+  justify-content: center;
+
+  padding-bottom: 30px;
+
+}
+
+.social-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+
+  border: 0;
+  border-radius: 50%;
+
+  padding: 0;
+  margin-left: 10px;
+  
+  
+  /* background-repeat: no-repeat;
+  background-position: center; */
+} 
+
+.social-link:hover, .social-link:focus {
+  /* fill: #ffffff; */
+  background-color: var(--firm-color);
+}
+
+.social-icon {
+  fill: var(--main-text);
+}
+
+.social-link:hover .social-icon, .social-link:focus .social-icon {
+  fill: #ffffff;
+} 
+
+
+
+
+/* .social-link.instagramm {
+  background-image: url(../images/instagram.svg);
+}
+
+.social-link.twitter {
+  background-image: url(../images/twitter.svg);
+}
+
+.social-link.facebook {
+  background-image: url(../images/facebook.svg);
+}
+
+.social-link.linkedin {
+  background-image: url(../images/linkedin.svg);
+}
+
+.social-link:hover,
+.social-link:focus {
+  color: tomato;
+} */
+
+
+/* Постоянные клиенты */
+
+.clients.list {
+  display: flex;
+  flex-basis: calc(100% / 6 - 30px);
+  margin-left: -30px;
+
+  padding-bottom: 126px;
+}
+
+.main-title.clients {
+  margin-bottom: 0;
+  padding-top: 94px;
+  padding-bottom: 50px;
+
+  justify-content: center;
+
+}
+
+.main-client {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 170px;
+  height: 90px; 
+  margin-left: 30px;
+
+  border: 1px solid #AFB1B8;
+  border-radius: 4px;
+
+  fill: var(--main-text);
+}
+
+.main-client:hover .client-svg, .main-client:focus .client-svg {
+  fill: var(--firm-color, blue);
+}
+
+
+
 /* Подвал */
 
 .footer {
@@ -350,6 +516,7 @@ img {
   list-style: none;
   margin: 0;
   padding-left: 0;
+
 }
 
 .address {
@@ -359,7 +526,8 @@ img {
   line-height: 1.714;
 }
 
-.full-footer {
+.full-logo {
+  display: block;
   padding-bottom: 20px;
 }
 
@@ -380,107 +548,60 @@ img {
   color: var(--firm-color, blue);
 }
 
-/* Старница портфолио */
-
-/* Хедер */
-
-.page-header {
-  border-bottom: 1px solid #ECECEC;
-}
-
-/* Фильтры наших работ - кнопки */
-
-.filter-our-works {
-  padding-top: 71px;
-  padding-bottom: 94px;
-}
-
-.container .filter-btn {
-  padding-left: 0;
-  padding-right: 0;
-
-}
-
-.filter-buttons.list {
+.container.ftr {
   display: flex;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 56px;
-  justify-content: center;
-
 }
 
-.btn-item + .btn-item {
-  margin-left: 8px;
-}
+.container.footer-links {
+  /* display: flex; */
 
-
-.filter-buttons .btn {
-  min-width: 73px;
-  height: 38px;
-  padding: 6px 22px;
-  border-radius: 4px;
-
-  background-color: var(--buttons-background, #ffffff);
-  font-family: inherit;
-  border: none;
-  color: var(--nav-text, #000000);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.6;
-}  
-
-.filter-buttons .btn:hover,
-.filter-buttons .btn:focus {
-  background-color: var(--firm-color, blue);
-  color: #ffffff;
-}
- 
-/* Наши работы */
-
-.projects.list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
-  
-  text-align: left;
-}
-
-.project-card {
-  flex-basis: calc(100% / 3 - 30px);
-  margin-left: 30px;
-  margin-top: 30px;
-}
-
-.projects.list .project {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 4px;
-}
-
-.project-info {
-  margin-top: 0px;
-  margin-bottom: 0;
-}
-
-.project-item {
-  padding: 20px 24px;
-
-  border: 1px solid #EEEEEE;
+  /* width: 44px;
+  height: 44px;
+  border: 1px solid tomato; */
 
 }
+.footer-join {
+  margin: 0;
+  padding-bottom: 20px;
 
-.projects .project {
-  color: var(--title-text);
-  font-size: 18px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.2;
   font-weight: 700;
-  line-height: 2.0;
 }
 
-.projects .project-info {
-  color: var(--main-text);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.9;
+.footer.list {
+  display: flex;
+  flex-basis: calc( 100% / 4 - 10px);
+  margin-left: -10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
 }
+
+.footer-itm {
+  margin-left: 10px;
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  fill: #FFFFFF;
+}
+
+.footer-itm:hover{
+  background-color: var(--firm-color);
+}
+

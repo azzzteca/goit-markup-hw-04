@@ -1,0 +1,59 @@
+html {
+  box-sizing: border-box;
+}
+/* 
+.overlay {
+  height: 600px;
+  max-width: 1600px;
+  outline: 1px solid tomato;
+
+  background-image: linear-gradient( to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero.jpg);
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: tomato;
+
+  text-align: center;
+  color: tomato;
+  font-size: 110px; */
+  
+.button {
+  display: inline-flex;
+  padding: 10px 20px;
+  align-items: center;
+  
+  background-color: teal;
+  color: white;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+}
+
+/* .button > .icon {
+  width: 20px;
+  height: 20px;
+  background-color: tomato;
+
+  margin-right: 10px;
+  background-image: url( ../images/envelope.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%; */
+
+  
+/* } */
+
+.button::before {
+  width: 20px;
+  height: 20px;
+  background-color: tomato;
+  content: "";
+  margin-right: 10px;
+background-image: url(../images/envelope.svg);
+background-repeat: no-repeat;
+background-position: center;
+
+}
+
