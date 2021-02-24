@@ -5,6 +5,7 @@
   --contacts-text: #757575;
   --firm-color: #2196F3;
   --buttons-background: #F5F4FA;
+  --icons-color: #AFB1B8;
 }
 
 html {
@@ -385,15 +386,17 @@ img {
   margin-left: 10px;
 } 
 
-.social-link:hover, .social-link:focus {
+.social-link:hover, 
+.social-link:focus {
   background-color: var(--firm-color);
 }
 
 .social-icon {
-  fill: var(--main-text);
+  fill: var(--icons-color);
 }
 
-.social-link:hover .social-icon, .social-link:focus .social-icon {
+.social-link:hover .social-icon, 
+.social-link:focus .social-icon {
   fill: #ffffff;
 } 
 
@@ -426,10 +429,11 @@ img {
   border: 1px solid #AFB1B8;
   border-radius: 4px;
 
-  fill: var(--main-text);
+  fill: var(--icons-color);
 }
 
-.main-client:hover .client-svg, .main-client:focus .client-svg {
+.main-client:hover .client-svg, 
+.main-client:focus .client-svg {
   fill: var(--firm-color, blue);
 }
 
@@ -522,10 +526,14 @@ img {
   width: 44px;
   height: 44px;
 
+  border-radius: 50%;
+
+
   fill: #FFFFFF;
 }
 
-.footer-itm:hover{
+.footer-link:hover,
+.footer-link:focus {
   background-color: var(--firm-color);
 }
 
